@@ -1,11 +1,33 @@
-<mat-card class="mat-elevation-z0 form-card">
-    <div class="card-content">
-    <mat-card-header class="card-header">
-      <mat-card-title class="card-title">User Registerstion Form</mat-card-title>
-      <mat-icon>person</mat-icon>
-    </mat-card-header>
-    <mat-card-content class="card-body">
-    
-    </mat-card-content>
+<mat-card class="login-card">
+    <div    >
+            <mat-card-header >
+              <mat-card-title >User Registerstion Form</mat-card-title>
+              <mat-icon>person</mat-icon>
+            </mat-card-header>
+
+            <mat-card-content >
+                <form  [formGroup]="profileForm" class="login-form">   
+                  <mat-form-field appearance="outline">
+                      <mat-label>User Name</mat-label>
+                      <input matInput formControlName= "userName" >
+                      <mat-icon matSuffix>mode_edit</mat-icon>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                      <mat-label>Enter your password</mat-label>
+                      <input matInput [type]="hide ? 'password' : 'text'">
+                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                  </mat-form-field>
+              </form>
+            </mat-card-content>
+
+            <mat-card-actions>
+              <button mat-button  class="primary" [disabled]="profileForm.invalid" type="submit" >Submit</button> 
+            </mat-card-actions>
+
+            <mat-card-footer>
+              <mat-hint>forget password></mat-hint>
+            </mat-card-footer>
     </div>
   </mat-card>

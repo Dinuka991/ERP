@@ -6,16 +6,17 @@ import { FormBuilder, FormControl, FormGroup, NgForm, ValidationErrors, Validato
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-
+  
+  hide = true;
   constructor(private fb: FormBuilder) { }
-
+  
   ngOnInit(): void {
   }
   profileForm = this.fb.group({
-
+ 
     userName: [''],
-    end: ['']
+   
  
   });
-  onSubmit(){}
+  onSubmit(form: NgForm){}
 }
