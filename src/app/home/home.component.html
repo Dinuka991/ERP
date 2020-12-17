@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container mat-app-background"  [ngClass]="{ 'my-dark-theme': isChecked }"  >
+<mat-sidenav-container class="sidenav-container mat-app-background mat-typography"  [ngClass]="{ 'my-dark-theme': isChecked }"  >
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -30,5 +30,6 @@
    
     </mat-toolbar>
     <!-- Add Content Here -->
+      
   </mat-sidenav-content>
 </mat-sidenav-container>
